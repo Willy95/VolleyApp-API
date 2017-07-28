@@ -18,7 +18,11 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
-Route.get('/getTasks', 'ToDoListController.getTasks')
-Route.post('/statusTask/:id', 'ToDoListController.setStatusTask')
+Route.post('/insertTask', 'ToDoListController.insertTask')
 Route.post('/deleteTask/:id', 'ToDoListController.deleteTask')
-Route.post('/insertTask/', 'ToDoListController.insertTask')
+
+Route.post('/statusTask/:id', 'ToDoListController.setStatusTask')
+Route.post('/insertCommet', 'ToDoListController.insertCommet')
+Route.get('/get-comments-count', 'ToDoListController.getCommentsCount')
+
+Route.post('/test', 'ToDoListController.test')

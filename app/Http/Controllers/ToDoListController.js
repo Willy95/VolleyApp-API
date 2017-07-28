@@ -1,6 +1,7 @@
 'use strict'
 
 const Task = use('App/Model/Mongo/Task')
+const Comment = use('App/Model/Mongo/Comment')
 
 class ToDoListController {
 
@@ -103,6 +104,50 @@ class ToDoListController {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  * test(req, res){
+      return res.send({
+          message: "Success Adonis API",
+          data: null
+      })
+  }
+
+  * insertCommet(req, res){
+      try {
+        let data = req.all()
+        let comment = new Comment()
+        comment.text = data.comment
+        comment.save(function(err, _comment){
+          if (err){
+            console.log(err)
+            return res.send({error:"error"})
+          }
+          else {
+            if (_comment){ return res.send({success:"success"}) }
+            else { return res.send({error:"null"}) }
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+  }
+
+  * getCommentsCount(req, res){
+      try {
+          Comment.find({}, (err, comments) => {
+              if (err){
+                console.log(err)
+                return res.send("error")
+              }
+              else {
+                if (comments){ return res.send("" + comments.length) }
+                else { return res.send("0") }
+              }
+          })
+      } catch (e) {
+        console.log(e);
+      }
   }
 
 }
