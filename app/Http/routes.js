@@ -28,4 +28,11 @@ Route.get('/get-comments-count', 'ToDoListController.getCommentsCount')
 Route.post('/test', 'ToDoListController.test')
 
 // Rutas app de ImageRequest
-Route.get('/getImages', 'ImageRequestController.getImages')
+// const Image = use('App/Model/Image')
+//
+// Route.get('/getImages', function * (req, res){
+//     const imagen = req.file('adonis.jpg')
+//     // const images = yield Image.findBy('ruta','adonis.jpg')
+//     return res.send(imagen)
+//
+// })
