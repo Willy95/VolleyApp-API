@@ -1,11 +1,11 @@
 'use strict'
 
-// const Image = use('App/Model/Image')
+const Image = use('App/Model/Image')
 
 class ImageRequestController {
 
-    * getImages(request, response) {
-
+    * getData(request, response) {
+        
     }
 
 }
