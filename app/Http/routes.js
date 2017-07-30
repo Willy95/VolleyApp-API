@@ -26,3 +26,6 @@ Route.post('/insertCommet', 'ToDoListController.insertCommet')
 Route.get('/get-comments-count', 'ToDoListController.getCommentsCount')
 
 Route.post('/test', 'ToDoListController.test')
+
+// Rutas app de ImageRequest
+Route.get('/getImages', 'ImageRequestController.getImages')
